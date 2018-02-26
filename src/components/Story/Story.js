@@ -1,92 +1,94 @@
 import React from 'react'
 import { Button, Row, Col } from 'reactstrap'
 
-class Story extends React.Component {
+export default class Story extends React.Component {
     constructor() {
         super()
         this.state = {
             yes: false,
             no: false,
+            gasYes: false,
+            gasNo: false,
+            location: ''
         }
         this.yesClick = this.yesClick.bind(this)
         this.noClick = this.noClick.bind(this)
-        this.story = this.story.bind(this)
+        this.yesGasClick = this.yesGasClick.bind(this)
+        this.noGasClick = this.noGasClick.bind(this)
     }
 
     yesClick() {
-        this.setState({yes: true, no: false})
+        this.setState({ yes: true, no: false })
     }
     noClick() {
-        this.setState({yes: false, no: true})
+        this.setState({ yes: false, no: true })
     }
-
-    story() {
-        // if(!this.state.yes && !this.state.no){
-        //     return <Welcome />
-        // }else if(this.state.yes && !this.state.no){
-        //     return (<Gas />)
-        //     if(this.state.yes && !this.state.no){
-        //         return <Good />
-        //     }else{
-        //         return <Bad />
-        //     }
-        
-        // }
-        // else{
-        //     return <Really />
-        // }
-        
-        switch(this.state) {
-            case (this.state.yes):
-                return <Gas />
-                this.setState({yes: false, no: false})
-                switch(this.state){
-                    case(this.state.yes):
-                        return <Good />
-                        break
-                    case(this.state.no):
-                        return <Bad />
-                        break
-                }
-            case(this.state.no):
-                return <Really />
-                this.setState({yes:false, no: false})
-                switch(this.state){
-                    case(this.state.yes):
-                    return <Welcome />
-                    break
-                    case(this.state.no):
-                    return <TryAgain />
-                    break
-                }
-            default:
-            <Welcome/>
-            
-        }
+    yesGasClick() {
+        this.setState({ gasYes: true, gasNo: false })
+    }
+    noGasClick() {
+        this.setState({ gasYes: false, gasNo: true })
     }
 
     render() {
         return (
             <div>
-                {this.story()}
+                <Welcome yes={this.state.yes} no={this.state.no} yesClick={this.yesClick} noClick={this.noClick} yesGas={this.state.gasYes} noGas={this.state.gasNo} yesGasClick={this.yesGasClick} noGasClick={this.noGasClick} />
+            </div>
+        )
+    }
+}
+
+
+const Welcome = (props) => {
+    console.log(props)
+    if (props.yes) {
+        return (
+            <div>
+                <Gas yesGas={props.yesGas} noGas={props.noGas} yesGasClick={props.yesGasClick} noGasClick={props.noGasClick}/>
+            </div>
+        )
+    }
+    else if (props.no) {
+        console.log(props)
+        return <Really />
+    } else {
+        return (
+            <div>
+                <h3>Are you ready to hit the road?</h3>
                 <Row>
                     <Col>
-                        <Button onClick={this.yesClick}>Yes</Button>
+                        <Button onClick={props.yesClick}>Yes</Button>
                     </Col>
                     <Col>
-                        <Button onClick={this.noClick}>No</Button>
+                        <Button onClick={props.noClick}>No</Button>
                     </Col>
                 </Row>
             </div>
         )
     }
 }
-
-const Welcome = () => {
-    return <h3>Are you ready to hit the road?</h3>
-}
-const Gas = () => {
-    return <h3>Do you want to stop for gas?</h3>
+const Gas = (props) => {
+    console.log(props)
+    if (props.yesGas) {
+        return <Good />
+    } else if (props.noGas) {
+        return <Bad />
+    } else {
+        return (
+            <div>
+                <h3>Do you want to stop for gas?</h3>
+                <Row>
+                    <Col>
+                        <Button onClick={props.yesGasClick}>Yes</Button>
+                    </Col>
+                    <Col>
+                        <Button onClick={props.noGasClick}>No</Button>
+                    </Col>
+                </Row>
+            </div>
+        )
+    }
 }
 const Really = () => {
     return <h3>Are you sure?</h3>
@@ -100,5 +102,3 @@ const Bad = () => {
 const TryAgain = () => {
     return <h3>Ok. See ya later!</h3>
 }
-
-export default Story
