@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import '../../App.css'
 
 class PlayerInfo extends React.Component {
     constructor(props) {
@@ -35,7 +36,7 @@ class PlayerInfo extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className='player'>
                 <h1>Enter Player Information</h1>
                 <Form id="playerinfo" onSubmit={this.handleSubmit}>
                     <FormGroup>
@@ -57,7 +58,7 @@ class PlayerInfo extends React.Component {
                             <option>Volvo</option>
                             <option>Mazda</option>
                         </Input>
-                        <Button type="submit" color="success">Save</Button>
+                        <Button id='playerButton'type="submit" color="success">Save</Button>
                     </FormGroup>
                 </Form>
             </div>

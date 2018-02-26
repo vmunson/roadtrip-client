@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from "./components/Navbar"
-import Auth from "./components/signup-login/Auth"
 import {BrowserRouter as Router,
 } from 'react-router-dom';
 
@@ -37,10 +36,10 @@ class App extends Component {
         <Router>
         <Navbar clickLogout={this.logout} token={this.state.sessionToken} setSessionToken={this.setSessionState}/>
         </Router>
-        {/* <Auth setSessionToken={this.setSessionState}/> */}
       </div>
     );
   }
 }
+
 
 export default App;

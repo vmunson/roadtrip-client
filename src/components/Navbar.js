@@ -3,6 +3,8 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
 import { Route, Link } from 'react-router-dom'
 import Auth from './signup-login/Auth'
 import Player from './Profile/PlayerInfo'
+import Story from './Story/Story'
+import '../App.css'
 
 export default class Navbar extends React.Component {
     constructor(props) {
@@ -13,9 +15,9 @@ export default class Navbar extends React.Component {
         return (
             <div>
                 <div>
-                    <Nav>
+                    <Nav className='navBar'>
                         <NavItem>
-                            <NavLink onClick={() => this.props.clickLogout()}  ><span>{name} </span></NavLink>
+                            <NavLink className='login' onClick={() => this.props.clickLogout()}  ><span>{name} </span></NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink><Link to={`/auth`}>Home</Link></NavLink>
@@ -24,13 +26,14 @@ export default class Navbar extends React.Component {
                             <NavLink><Link to={`/player`}>Player</Link></NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#">Story</NavLink>
+                            <NavLink><Link to={`/story`}>Story</Link></NavLink>
                         </NavItem>
                     </Nav>
                 </div>
                 <div className="navbar-route">
                     <Route exact path="/player" render={(props) => (<Player token={this.props.token} />)} />
-                    <Route exact path="/auth" render={(props) => (<Auth setSessionToken={this.setSessionState}/> )}/>
+                    <Route exact path="/auth" render={(props) => (<Auth setSessionToken={this.props.setSessionToken}/> )}/>
+                    <Route exact path="/story" render={() => (<Story/>)} />
                 </div>
             </div>
         );

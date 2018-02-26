@@ -1,11 +1,13 @@
 import React from 'react'
-import {Row, Col} from 'reactstrap'
+import { Row, Col } from 'reactstrap'
 import Signup from './Signup'
 import Login from './Login'
+import '../../App.css'
 
 const Auth = (props) => {
-        return(
-            <div>
+    return (
+        <div>
+            <div className='signin'>
                 <Row>
                     <Col>
                         <Signup setSessionToken={props.setSessionToken} />
@@ -13,9 +15,12 @@ const Auth = (props) => {
                     <Col>
                         <Login setSessionToken={props.setSessionToken} />
                     </Col>
-                    </Row>
+                </Row>
             </div>
-        )
-    }     
+        </div>
+    )
+}
 
-    export default Auth
+
+
+export default Auth

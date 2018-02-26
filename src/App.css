@@ -1,28 +1,56 @@
-.App {
+/* .map {
+  height: 100%;
+  width: 100%;
+  border: 2px solid black;
+  position: fixed;
+  background-image: url('/client/assets/background.png') repeat 0 0
+} */
+
+.navBar{
+  background-color: black
+}
+
+.navBar a{
+  color: bisque
+}
+.navBar a:hover{
+  text-decoration: none;
+  color: brown
+}
+
+.navBar span{
+  color: bisque
+}
+
+.login{
+  float: right;
+}
+
+.signin{
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 90px;
+}
+
+.player{
+  width: 65%;
+  position: relative;
+  margin: auto;
+  top: 2em;
+  border: 1px solid black;
+  padding: 1em;
+  background-color: rgba(104, 103, 100, .3);
+  border-radius: 5px;
+}
+
+.player h1{
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#playerButton{
+  margin-top: 1em;
+  position: relative;
+  left: 90%
 }
