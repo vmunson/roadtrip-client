@@ -1,10 +1,10 @@
-/* .map {
+ .map {
   height: 100%;
   width: 100%;
-  border: 2px solid black;
   position: fixed;
-  background-image: url('/client/assets/background.png') repeat 0 0
-} */
+  background-image: url('https://i.imgur.com/5CUv2n7.jpg'); 
+  background-size: contain
+} 
 
 .navBar{
   background-color: black
@@ -41,8 +41,9 @@
   top: 2em;
   border: 1px solid black;
   padding: 1em;
-  background-color: rgba(104, 103, 100, .3);
+  background-color: rgba(104, 103, 100, .7);
   border-radius: 5px;
+  color:rgb(239, 231, 222)
 }
 
 .player h1{
@@ -53,4 +54,19 @@
   margin-top: 1em;
   position: relative;
   left: 90%
+}
+.story{
+  width: 65%;
+  position: relative;
+  margin: auto;
+  top: 2em;
+  border: 1px solid black;
+  padding: 1em;
+  background-color: rgba(104, 103, 100, .7);
+  border-radius: 5px;
+  text-align: center;
+  color:rgb(239, 231, 222)
+}
+.story h5{
+  text-align: start;
 }

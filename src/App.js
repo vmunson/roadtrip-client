@@ -32,7 +32,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='map'>
         <Router>
         <Navbar clickLogout={this.logout} token={this.state.sessionToken} setSessionToken={this.setSessionState}/>
         </Router>

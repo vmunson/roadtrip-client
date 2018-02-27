@@ -33,7 +33,7 @@ export default class Navbar extends React.Component {
                 <div className="navbar-route">
                     <Route exact path="/player" render={(props) => (<Player token={this.props.token} />)} />
                     <Route exact path="/auth" render={(props) => (<Auth setSessionToken={this.props.setSessionToken}/> )}/>
-                    <Route exact path="/story" render={() => (<Story/>)} />
+                    <Route exact path="/story" render={(props) => (<Story token={this.props.token}/>)} />
                 </div>
             </div>
         );
