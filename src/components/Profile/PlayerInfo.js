@@ -25,7 +25,7 @@ class PlayerInfo extends React.Component {
     toggle(e) {
         this.setState({
           modal: !this.state.modal,
-          id: e.target.id
+          id: parseInt(e.target.id)
         });
       }
     componentWillMount() {
