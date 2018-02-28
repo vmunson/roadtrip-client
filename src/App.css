@@ -89,7 +89,7 @@
 .signupButton{
   position: relative;
   margin:auto;
-  left:45%;
+  left:55%;
   background-color: rgb(124, 88, 41);
 }
 .signupButton:hover{
