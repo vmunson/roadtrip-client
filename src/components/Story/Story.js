@@ -117,7 +117,7 @@ export default class Story extends React.Component {
     render() {
         return (
             <div className='story'>
-                <Button color='success' className="float-right" onClick={this.handleSubmit}>Save</Button>
+                <Button color='success' className="float-right" size="sm" onClick={this.handleSubmit}>Save</Button>
                 <h5>Location: {this.state.location}</h5>
                 <Welcome yes={this.state.yes} no={this.state.no}
                     yesClick={this.yesClick} noClick={this.noClick}
