@@ -31,7 +31,7 @@ class Signup extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    fetch("http://https://oregon-roadtrip.herokuapp.com//api/user", {
+    fetch("https://oregon-roadtrip.herokuapp.com/api/user", {
       method: 'POST',
       body: JSON.stringify({ user: this.state }),
       headers: new Headers({

@@ -28,7 +28,7 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    fetch("http://https://oregon-roadtrip.herokuapp.com//api/login", {
+    fetch("https://oregon-roadtrip.herokuapp.com/api/login", {
       method: 'POST',
       body: JSON.stringify({ user: this.state }),
       headers: new Headers({
