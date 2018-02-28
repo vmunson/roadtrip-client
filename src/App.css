@@ -88,7 +88,8 @@
 }
 .signupButton{
   position: relative;
-  margin:auto
+  margin:auto;
+  left:30px
 }
 .loginButton{
   position: relative;
