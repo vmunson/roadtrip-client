@@ -6,7 +6,8 @@ import '../../App.css'
 
 const Auth = (props) => {
     return (
-        <div>
+        <div className="welcome">
+            <h1>Welcome</h1>
             <div className='signin'>
                 <Row>
                     <Col>
