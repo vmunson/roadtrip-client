@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Row, Col } from 'reactstrap';
-
+import '../../App.css'
 
 class Signup extends React.Component {
   constructor(props) {
@@ -53,7 +53,7 @@ class Signup extends React.Component {
       <div>
         <Row>
           <Col>
-        <Button color="primary" onClick={this.toggle}>Sign Up</Button>
+        <Button className="signupButton" onClick={this.toggle}>Sign Up</Button>
         </Col>
         <Col>
         </Col>

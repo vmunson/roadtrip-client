@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup } from 'reactstrap';
+import '../../App.css'
 
 class Login extends React.Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle}>Log In</Button>
+        <Button className="loginButton" onClick={this.toggle}>Log In</Button>
         <Modal isOpen={this.state.modal} className={this.props.className}>
           <ModalHeader>Log In</ModalHeader>
           <Form onSubmit={this.handleSubmit}>

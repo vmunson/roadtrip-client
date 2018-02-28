@@ -26,14 +26,6 @@
   float: right;
 }
 
-.signin{
-  width: 20%;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  top: 90px;
-}
-
 .player{
   width: 65%;
   position: relative;
@@ -91,5 +83,14 @@
   background-color: rgba(104, 103, 100, .7);
   color:rgb(239, 231, 222);
   border: 1px solid black;
-  border-radius: 5px
+  border-radius: 5px;
+  padding: 10px
+}
+.signupButton{
+  position: relative;
+  margin:auto
+}
+.loginButton{
+  position: relative;
+  margin:auto
 }
