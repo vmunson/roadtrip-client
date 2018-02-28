@@ -8,16 +8,14 @@ const Auth = (props) => {
     return (
         <div className="welcome">
             <h1>Welcome</h1>
-            <div className='signin'>
-                <Row>
-                    <Col>
-                        <Signup setSessionToken={props.setSessionToken} />
-                    </Col>
-                    <Col>
-                        <Login setSessionToken={props.setSessionToken} />
-                    </Col>
-                </Row>
-            </div>
+            <Row>
+                <Col>
+                    <Signup setSessionToken={props.setSessionToken} />
+                </Col>
+                <Col>
+                    <Login setSessionToken={props.setSessionToken} />
+                </Col>
+            </Row>
         </div>
     )
 }

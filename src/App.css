@@ -83,7 +83,9 @@
 }
 .welcome{
   position: relative;
-  margin: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   width: 50%;
   text-align: center;
   background-color: rgba(104, 103, 100, .7);
