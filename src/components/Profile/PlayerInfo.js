@@ -15,6 +15,7 @@ class PlayerInfo extends React.Component {
             modal: false
         }
         this.toggle = this.toggle.bind(this)
+        this.closetoggle = this.closetoggle.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.fetchPlayerInfo = this.fetchPlayerInfo.bind(this);
@@ -27,6 +28,11 @@ class PlayerInfo extends React.Component {
         this.setState({
           modal: !this.state.modal,
           id: id
+        });
+      }
+      closetoggle() {
+        this.setState({
+          modal: !this.state.modal,
         });
       }
     componentWillMount() {
@@ -186,8 +192,8 @@ class PlayerInfo extends React.Component {
                                 </FormGroup>
                             </ModalBody>
                             <ModalFooter>
-                                <Button color="success" type="submit" onClick={this.toggle}>Save</Button>
-                                <Button onClick={this.toggle}>Cancel</Button>
+                                <Button color="success" type="submit" onClick={this.closetoggle}>Save</Button>
+                                <Button onClick={this.closetoggle}>Cancel</Button>
                             </ModalFooter>
                         </Form>
                     </Modal>
