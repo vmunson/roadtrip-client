@@ -31,7 +31,7 @@ class PlayerInfo extends React.Component {
         this.fetchPlayerInfo()
     }
     fetchPlayerInfo() {
-        fetch("http://localhost:3000/api/player", {
+        fetch("http://https://oregon-roadtrip.herokuapp.com//api/player", {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ class PlayerInfo extends React.Component {
     }
 
     playerInfoDelete(event) {
-        fetch("http://localhost:3000/api/player", {
+        fetch("http://https://oregon-roadtrip.herokuapp.com//api/player", {
             method: 'DELETE',
             body: JSON.stringify({ player: { id: event.target.id } }),
             headers: new Headers({
@@ -68,7 +68,7 @@ class PlayerInfo extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        fetch("http://localhost:3000/api/player", {
+        fetch("http://https://oregon-roadtrip.herokuapp.com//api/player", {
             method: 'POST',
             body: JSON.stringify({ player: this.state }),
             headers: new Headers({
@@ -82,7 +82,7 @@ class PlayerInfo extends React.Component {
     }
     handleUpdate(e) {
         e.preventDefault()
-        fetch("http://localhost:3000/api/player", {
+        fetch("http://https://oregon-roadtrip.herokuapp.com//api/player", {
             method: 'PUT',
             body: JSON.stringify({ player: this.state}),
             headers: new Headers({
