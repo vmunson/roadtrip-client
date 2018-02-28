@@ -28,6 +28,8 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    // localhost:3000
+    // oregon-roadtrip.herokuapp.com
     fetch("https://oregon-roadtrip.herokuapp.com/api/login", {
       method: 'POST',
       body: JSON.stringify({ user: this.state }),

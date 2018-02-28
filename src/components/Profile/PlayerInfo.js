@@ -22,15 +22,18 @@ class PlayerInfo extends React.Component {
         this.playerInfoDelete = this.playerInfoDelete.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this)
     }
-    toggle() {
+    toggle(e) {
         this.setState({
-          modal: !this.state.modal
+          modal: !this.state.modal,
+          id: e.target.name
         });
       }
     componentWillMount() {
         this.fetchPlayerInfo()
     }
     fetchPlayerInfo() {
+        // localhost:3000
+        // oregon-roadtrip.herokuapp.com
         fetch("https://oregon-roadtrip.herokuapp.com/api/player", {
             method: 'GET',
             headers: new Headers({
@@ -49,6 +52,8 @@ class PlayerInfo extends React.Component {
     }
 
     playerInfoDelete(event) {
+        // localhost:3000
+        // oregon-roadtrip.herokuapp.com
         fetch("https://oregon-roadtrip.herokuapp.com/api/player", {
             method: 'DELETE',
             body: JSON.stringify({ player: { id: event.target.id } }),
@@ -68,6 +73,8 @@ class PlayerInfo extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        // localhost:300
+        // oregon-roadtrip.herokuapp.com
         fetch("https://oregon-roadtrip.herokuapp.com/api/player", {
             method: 'POST',
             body: JSON.stringify({ player: this.state }),
@@ -82,6 +89,8 @@ class PlayerInfo extends React.Component {
     }
     handleUpdate(e) {
         e.preventDefault()
+        // localhost:3000
+        // oregon-roadtrip.herokuapp.com
         fetch("https://oregon-roadtrip.herokuapp.com/api/player", {
             method: 'PUT',
             body: JSON.stringify({ player: this.state}),
@@ -142,7 +151,7 @@ class PlayerInfo extends React.Component {
                                             <td>{playerInfo.player}</td>
                                             <td>{playerInfo.occupation}</td>
                                             <td>{playerInfo.carType}</td>
-                                            <td><Button id={playerInfo.id} onClick={this.toggle} color="primary">Update</Button></td>
+                                            <td><Button id={playerInfo.id} name={playerInfo.id} onClick={this.toggle} color="primary">Update</Button></td>
                                             <td><Button id={playerInfo.id} onClick={this.playerInfoDelete} color="danger">Delete</Button></td>
                                         </tr>
                                     )

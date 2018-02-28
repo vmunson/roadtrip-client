@@ -103,6 +103,8 @@ export default class Story extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault()
+        // localhost:3000
+        // oregon-roadtrip.herokuapp.com
         fetch("https://oregon-roadtrip.herokuapp.com/api/story", {
             method: 'POST',
             body: JSON.stringify({ story: this.state.location }),
