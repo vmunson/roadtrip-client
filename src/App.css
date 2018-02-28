@@ -71,6 +71,12 @@
   text-align: start;
 }
 .playerUpdate{
+  position: relative;
+  margin: 30px;
   background-color: rgba(104, 103, 100, .7);
-  color:rgb(239, 231, 222)
+  color:rgb(239, 231, 222);
+  text-decoration: none;
+}
+.playerUpdate h3{
+  text-align: center;
 }

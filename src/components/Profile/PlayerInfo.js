@@ -105,7 +105,7 @@ class PlayerInfo extends React.Component {
                 'Content-Type': 'application/json',
                 'Authorization': this.props.token
             })
-        })
+        }).then(this.updatePIArray())
     }
     render() {
         return (
