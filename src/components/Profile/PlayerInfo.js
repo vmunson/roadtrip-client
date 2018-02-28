@@ -23,6 +23,7 @@ class PlayerInfo extends React.Component {
         this.handleUpdate = this.handleUpdate.bind(this)
     }
     toggle(e) {
+        console.log(e.target.id)
         this.setState({
           modal: !this.state.modal,
           id: parseInt(e.target.id)
