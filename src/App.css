@@ -70,3 +70,7 @@
 .story h5{
   text-align: start;
 }
+.playerUpdate{
+  background-color: rgba(104, 103, 100, .7);
+  color:rgb(239, 231, 222)
+}
