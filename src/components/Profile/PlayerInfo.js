@@ -23,6 +23,7 @@ class PlayerInfo extends React.Component {
         this.handleUpdate = this.handleUpdate.bind(this)
     }
     toggle(e, id) {
+        console.log(id)
         this.setState({
           modal: !this.state.modal,
           id: id
@@ -151,7 +152,7 @@ class PlayerInfo extends React.Component {
                                             <td>{playerInfo.player}</td>
                                             <td>{playerInfo.occupation}</td>
                                             <td>{playerInfo.carType}</td>
-                                            <td><Button id={playerInfo.id} onClick={(e)=>this.toggle(e, playerInfo.id)} color="primary">Update</Button></td>
+                                            <td><Button id={playerInfo.id} onClick={e=>this.toggle(e, playerInfo.id)} color="primary">Update</Button></td>
                                             <td><Button id={playerInfo.id} onClick={this.playerInfoDelete} color="danger">Delete</Button></td>
                                         </tr>
                                     )
