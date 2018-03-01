@@ -78,7 +78,7 @@ class Signup extends React.Component {
               </FormGroup>
             </ModalBody>
             <ModalFooter>
-              <Button color="secondary" onClick={this.toggle}>Cancel</Button>{' '}
+              <Button color="secondary" onClick={this.toggle}>Close</Button>{' '}
               <Button color="success" type="submit" onClick={this.toggleOther}>Sign Up</Button>
             </ModalFooter>
           </Form>
