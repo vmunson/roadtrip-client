@@ -17,7 +17,7 @@ class Signup extends React.Component {
   }
 
   toggle() {
-    if (this.state.password >= 5 && this.state.email == value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+    if (this.state.password >= 5 && this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
       this.setState({
         modal: !this.state.modal
       });
