@@ -12,11 +12,16 @@ class Signup extends React.Component {
     };
     console.log(this.props)
     this.toggle = this.toggle.bind(this)
+    this.toggleOther = this.toggleOther.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
-
-  toggle() {
+  toggle(){
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+  toggleOther() {
     if (this.state.password >= 5 && this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
       this.setState({
         modal: !this.state.modal
@@ -74,7 +79,7 @@ class Signup extends React.Component {
             </ModalBody>
             <ModalFooter>
               <Button color="secondary" onClick={this.toggle}>Cancel</Button>{' '}
-              <Button color="success" type="submit" onClick={this.toggle}>Sign Up</Button>
+              <Button color="success" type="submit" onClick={this.toggleOther}>Sign Up</Button>
             </ModalFooter>
           </Form>
         </Modal>
