@@ -16,7 +16,8 @@ class Signup extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  toggle() {
+  toggle(e) {
+    e.preventDefault()
     this.setState({
       modal: !this.state.modal
     });
