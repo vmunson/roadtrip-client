@@ -22,7 +22,7 @@ class Signup extends React.Component {
     });
   }
   toggleOther() {
-    if (this.state.password >= 5 && this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+    if (this.state.password >= 5) {
       this.setState({
         modal: !this.state.modal
       });
