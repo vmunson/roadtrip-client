@@ -16,11 +16,12 @@ class Signup extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  toggle(e) {
-    e.preventDefault()
-    this.setState({
-      modal: !this.state.modal
-    });
+  toggle() {
+    if (this.state.password >= 5 && this.state.email == value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+      this.setState({
+        modal: !this.state.modal
+      });
+    }
   }
 
   handleChange(e) {
@@ -54,10 +55,10 @@ class Signup extends React.Component {
       <div>
         <Row>
           <Col>
-        <Button className="signupButton" onClick={this.toggle}>Sign Up</Button>
-        </Col>
-        <Col>
-        </Col>
+            <Button className="signupButton" onClick={this.toggle}>Sign Up</Button>
+          </Col>
+          <Col>
+          </Col>
         </Row>
         <Modal isOpen={this.state.modal} className={this.props.className}>
           <ModalHeader>Sign Up</ModalHeader>
