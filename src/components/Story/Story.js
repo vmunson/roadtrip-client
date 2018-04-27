@@ -233,7 +233,6 @@ const Gas = (props) => {
 }
 
 const Good = (props) => {
-    console.log(props)
     if (props.yesBroom) {
         return <Refill yesCRHotel={props.yesCRHotel} noCRHotel={props.noCRHotel}
             yesCRHotelClick={props.yesCRHotelClick} noCRHotelClick={props.noCRHotelClick}
