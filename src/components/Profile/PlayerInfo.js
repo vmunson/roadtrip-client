@@ -141,8 +141,8 @@ class PlayerInfo extends React.Component {
     render() {
         return (
             <div>
-                {/* {this.view()} */}
-                <div className='player'>
+                {this.view()}
+                {/* <div className='player'>
                     <h1>Enter Player Information</h1>
                     <Form id="playerinfo" onSubmit={this.handleSubmit}>
                         <FormGroup>
@@ -167,7 +167,7 @@ class PlayerInfo extends React.Component {
                             <Button id='playerButton' type="submit" color="success">Save</Button>
                         </FormGroup>
                     </Form>
-                </div>
+                </div> */}
                 <div className='playerUpdate'>
                     <h3>Player Information</h3>
                     <hr />
