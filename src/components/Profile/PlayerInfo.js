@@ -89,7 +89,7 @@ class PlayerInfo extends React.Component {
                 'Content-Type': 'application/json',
                 'Authorization': this.props.token
             })
-        })
+        }).then((res) => this.updatePIArray())
             .then(() => {
                 document.getElementById("playerinfo").reset()
             })
