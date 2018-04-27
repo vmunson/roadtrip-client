@@ -154,7 +154,8 @@ class PlayerInfo extends React.Component {
                                 this.state.playerInfo.map((playerInfo, id) => {
                                     return (
                                         <tr key={id}>
-                                            <td scope="row">{playerInfo.player}</td>
+
+                                            <td >{playerInfo.player}</td>
                                             <td>{playerInfo.occupation}</td>
                                             <td>{playerInfo.carType}</td>
                                             <td>
