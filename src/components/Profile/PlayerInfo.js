@@ -139,7 +139,7 @@ class PlayerInfo extends React.Component {
                 <div className='playerUpdate'>
                     <h3>Player Information</h3>
                     <hr />
-                    <Table className="no-border">
+                    <Table borderless>
                         <thead>
                             <tr>
                                 <th>Name</th>
