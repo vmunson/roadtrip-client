@@ -70,7 +70,7 @@
   border: 1px solid black;
   border-radius: 5px;
 }
-.playerUpdate h3{
+.playerUpdate h1{
   text-align: center;
 }
 .welcome{
@@ -88,4 +88,8 @@
 }
 .button{
   margin: 1em;
+}
+.buttonTable{
+  margin-left: 1em;
+  margin-right: 1em;
 }

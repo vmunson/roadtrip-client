@@ -138,7 +138,7 @@ class PlayerInfo extends React.Component {
             <div>
                 {this.addInfoView()}
                 <div className='playerUpdate'>
-                    <h3>Player Information</h3>
+                    <h1>Player Information</h1>
                     <hr />
                     <Table>
                         <thead>
@@ -158,8 +158,8 @@ class PlayerInfo extends React.Component {
                                             <td>{playerInfo.occupation}</td>
                                             <td>{playerInfo.carType}</td>
                                             <td>
-                                                <Button className="button" id={playerInfo.id} size="sm" onClick={e => this.toggle(e, playerInfo.id)} color="primary">Update</Button>
-                                                <Button className="button" id={playerInfo.id} size="sm" onClick={this.playerInfoDelete} color="danger">Delete</Button>
+                                                <Button className="buttonTable" id={playerInfo.id} size="sm" onClick={e => this.toggle(e, playerInfo.id)} color="primary">Update</Button>
+                                                <Button className="buttonTable" id={playerInfo.id} size="sm" onClick={this.playerInfoDelete} color="danger">Delete</Button>
                                             </td>
                                         </tr>
                                     )
