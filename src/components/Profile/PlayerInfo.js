@@ -13,7 +13,6 @@ class PlayerInfo extends React.Component {
             id: 0,
             playerInfo: [],
             modal: false,
-            noInfo: true
         }
         this.toggle = this.toggle.bind(this)
         this.closetoggle = this.closetoggle.bind(this)
@@ -27,15 +26,15 @@ class PlayerInfo extends React.Component {
     toggle(e, id) {
         console.log(id)
         this.setState({
-          modal: !this.state.modal,
-          id: id
+            modal: !this.state.modal,
+            id: id
         });
-      }
-      closetoggle() {
+    }
+    closetoggle() {
         this.setState({
-          modal: !this.state.modal,
+            modal: !this.state.modal,
         });
-      }
+    }
     componentDidMount() {
         this.fetchPlayerInfo()
     }
@@ -70,7 +69,6 @@ class PlayerInfo extends React.Component {
                 'Authorization': this.props.token
             })
         }).then((res) => this.updatePIArray())
-        .then(() => {this.setState({noInfo: true})})
     }
     handleChange(e) {
         this.setState({
@@ -90,7 +88,6 @@ class PlayerInfo extends React.Component {
                 'Authorization': this.props.token
             })
         }).then((res) => this.updatePIArray())
-            .then(() => {this.setState({noInfo: false})})
     }
     handleUpdate(e) {
         e.preventDefault()
@@ -98,7 +95,7 @@ class PlayerInfo extends React.Component {
         // oregon-roadtrip.herokuapp.com
         fetch("https://oregon-roadtrip.herokuapp.com/api/player", {
             method: 'PUT',
-            body: JSON.stringify({ player: this.state}),
+            body: JSON.stringify({ player: this.state }),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': this.props.token
@@ -106,8 +103,8 @@ class PlayerInfo extends React.Component {
         }).then((res) => this.updatePIArray())
     }
     addInfoView = () => {
-        if(this.state.playerInfo.length === 0){
-            return(
+        if (this.state.playerInfo.length === 0) {
+            return (
                 <div className='player'>
                     <h1>Enter Player Information</h1>
                     <Form id="playerinfo" onSubmit={this.handleSubmit}>
@@ -162,7 +159,7 @@ class PlayerInfo extends React.Component {
                                             <td scope="row">{playerInfo.player}</td>
                                             <td>{playerInfo.occupation}</td>
                                             <td>{playerInfo.carType}</td>
-                                            <td><Button id={playerInfo.id} size="sm" onClick={e=>this.toggle(e, playerInfo.id)} color="primary">Update</Button></td>
+                                            <td><Button id={playerInfo.id} size="sm" onClick={e => this.toggle(e, playerInfo.id)} color="primary">Update</Button></td>
                                             <td><Button id={playerInfo.id} size="sm" onClick={this.playerInfoDelete} color="danger">Delete</Button></td>
                                         </tr>
                                     )
@@ -175,24 +172,24 @@ class PlayerInfo extends React.Component {
                         <Form onSubmit={this.handleUpdate}>
                             <ModalBody>
                                 <FormGroup>
-                                <Label>Player Name</Label>
-                            <Input className="form-control" type="text" name="player" placeholder="Your name" onChange={this.handleChange} />
-                            <Label>Occupation</Label>
-                            <Input className="form-control" type="select" name="occupation" onChange={this.handleChange}>
-                                <option></option>
-                                <option>Lawyer</option>
-                                <option>Teacher</option>
-                                <option>Mechanic</option>
-                                <option>Coder</option>
-                            </Input>
-                            <Label>Car</Label>
-                            <Input className="form-control" type="select" name="carType" onChange={this.handleChange}>
-                                <option></option>
-                                <option>Suburban</option>
-                                <option>Grand Caravan</option>
-                                <option>Volvo</option>
-                                <option>Mazda</option>
-                            </Input>
+                                    <Label>Player Name</Label>
+                                    <Input className="form-control" type="text" name="player" placeholder="Your name" onChange={this.handleChange} />
+                                    <Label>Occupation</Label>
+                                    <Input className="form-control" type="select" name="occupation" onChange={this.handleChange}>
+                                        <option></option>
+                                        <option>Lawyer</option>
+                                        <option>Teacher</option>
+                                        <option>Mechanic</option>
+                                        <option>Coder</option>
+                                    </Input>
+                                    <Label>Car</Label>
+                                    <Input className="form-control" type="select" name="carType" onChange={this.handleChange}>
+                                        <option></option>
+                                        <option>Suburban</option>
+                                        <option>Grand Caravan</option>
+                                        <option>Volvo</option>
+                                        <option>Mazda</option>
+                                    </Input>
                                 </FormGroup>
                             </ModalBody>
                             <ModalFooter>
