@@ -147,7 +147,6 @@ class PlayerInfo extends React.Component {
                                 <th>Occupation</th>
                                 <th>Car Type</th>
                                 <th></th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -158,8 +157,10 @@ class PlayerInfo extends React.Component {
                                             <td scope="row">{playerInfo.player}</td>
                                             <td>{playerInfo.occupation}</td>
                                             <td>{playerInfo.carType}</td>
-                                            <td><Button id={playerInfo.id} size="sm" onClick={e => this.toggle(e, playerInfo.id)} color="primary">Update</Button><Button id={playerInfo.id} size="sm" onClick={this.playerInfoDelete} color="danger">Delete</Button></td>
-                                            <td><Button id={playerInfo.id} size="sm" onClick={this.playerInfoDelete} color="danger">Delete</Button></td>
+                                            <td>
+                                                <Button className="button" id={playerInfo.id} size="sm" onClick={e => this.toggle(e, playerInfo.id)} color="primary">Update</Button>
+                                                <Button className="button" id={playerInfo.id} size="sm" onClick={this.playerInfoDelete} color="danger">Delete</Button>
+                                            </td>
                                         </tr>
                                     )
                                 })
