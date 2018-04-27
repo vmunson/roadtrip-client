@@ -142,10 +142,10 @@ class PlayerInfo extends React.Component {
                     <Table className="no-border">
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Name</th>
                                 <th>Occupation</th>
                                 <th>Car Type</th>
+                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -154,8 +154,7 @@ class PlayerInfo extends React.Component {
                                 this.state.playerInfo.map((playerInfo, id) => {
                                     return (
                                         <tr key={id}>
-                                            <th scope="row">{playerInfo.id}</th>
-                                            <td>{playerInfo.player}</td>
+                                            <td scope="row">{playerInfo.player}</td>
                                             <td>{playerInfo.occupation}</td>
                                             <td>{playerInfo.carType}</td>
                                             <td><Button id={playerInfo.id} size="sm" onClick={e=>this.toggle(e, playerInfo.id)} color="primary">Update</Button></td>
