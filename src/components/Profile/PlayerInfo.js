@@ -9,7 +9,6 @@ class PlayerInfo extends React.Component {
             player: '',
             occupation: '',
             carType: '',
-            editInfo: false,
             id: 0,
             playerInfo: [],
             modal: false,
