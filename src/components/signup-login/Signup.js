@@ -23,7 +23,7 @@ class Signup extends React.Component {
   }
   toggleOther() {
     if (this.state.password >= 5) {
-      this.setState({
+     return this.setState({
         modal: !this.state.modal
       });
     }
