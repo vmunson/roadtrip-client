@@ -114,6 +114,15 @@ export default class Story extends React.Component {
             })
         })
     }
+    fetchCar = () => {
+        fetch("https://oregon-roadtrip.herokuapp.com/api/player", {
+            method: 'GET',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': this.props.token
+            })
+        })
+    }
     render() {
         return (
             <div className='story'>
