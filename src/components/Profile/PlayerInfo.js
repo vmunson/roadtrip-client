@@ -73,7 +73,6 @@ class PlayerInfo extends React.Component {
         .then(() => {this.setState({noInfo: true})})
     }
     handleChange(e) {
-        console.log(this.state)
         this.setState({
             [e.target.name]: e.target.value,
         });
@@ -106,7 +105,7 @@ class PlayerInfo extends React.Component {
             })
         }).then((res) => this.updatePIArray())
     }
-    view = () => {
+    addInfoView = () => {
         if(this.state.playerInfo.length === 0){
             return(
                 <div className='player'>
@@ -141,37 +140,11 @@ class PlayerInfo extends React.Component {
     render() {
         return (
             <div>
-                {this.view()}
-                {/* <div className='player'>
-                    <h1>Enter Player Information</h1>
-                    <Form id="playerinfo" onSubmit={this.handleSubmit}>
-                        <FormGroup>
-                            <Label>Player Name</Label>
-                            <Input className="form-control" type="text" name="player" placeholder="Your name" onChange={this.handleChange} />
-                            <Label>Occupation</Label>
-                            <Input className="form-control" type="select" name="occupation" onChange={this.handleChange}>
-                                <option></option>
-                                <option>Lawyer</option>
-                                <option>Teacher</option>
-                                <option>Mechanic</option>
-                                <option>Coder</option>
-                            </Input>
-                            <Label>Car</Label>
-                            <Input className="form-control" type="select" name="carType" onChange={this.handleChange}>
-                                <option></option>
-                                <option>Suburban</option>
-                                <option>Grand Caravan</option>
-                                <option>Volvo</option>
-                                <option>Mazda</option>
-                            </Input>
-                            <Button id='playerButton' type="submit" color="success">Save</Button>
-                        </FormGroup>
-                    </Form>
-                </div> */}
+                {this.addInfoview()}
                 <div className='playerUpdate'>
                     <h3>Player Information</h3>
                     <hr />
-                    <Table borderless>
+                    <Table>
                         <thead>
                             <tr>
                                 <th>Name</th>
