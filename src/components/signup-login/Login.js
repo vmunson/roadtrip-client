@@ -35,13 +35,15 @@ class Login extends React.Component {
       (response) => response.json()
     ).then((data) => {
       this.props.setSessionToken(data.sessionToken)
-    })
+    }).then(() => {
+      document.getElementById("login").reset()
+  })
   }
 
   render() {
     return (
       <div>
-          <Form onSubmit={this.handleLogin}>
+          <Form id="login" onSubmit={this.handleLogin}>
               <FormGroup>
                 <label>Email: </label>
                 <input className="form-control" type="email" name="email" placeholder="example@example.com" required onChange={this.handleChange} />
