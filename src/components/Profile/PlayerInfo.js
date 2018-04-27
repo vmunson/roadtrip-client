@@ -13,6 +13,7 @@ class PlayerInfo extends React.Component {
             id: 0,
             playerInfo: [],
             modal: false
+
         }
         this.toggle = this.toggle.bind(this)
         this.closetoggle = this.closetoggle.bind(this)
@@ -37,6 +38,7 @@ class PlayerInfo extends React.Component {
       }
     componentDidMount() {
         this.fetchPlayerInfo()
+        console.log(this.state.playerInfo)
     }
     fetchPlayerInfo() {
         // localhost:3000
@@ -107,9 +109,106 @@ class PlayerInfo extends React.Component {
             })
         }).then((res) => this.updatePIArray())
     }
-    view = () => {
-        if(this.state.playerInfo === [] || this.state.playerInfo === null){
-            return(
+    // view = () => {
+    //     if(this.state.playerInfo === [] || this.state.playerInfo === null){
+    //         return(
+    //             <div className='player'>
+    //                 <h1>Enter Player Information</h1>
+    //                 <Form id="playerinfo" onSubmit={this.handleSubmit}>
+    //                     <FormGroup>
+    //                         <Label>Player Name</Label>
+    //                         <Input className="form-control" type="text" name="player" placeholder="Your name" onChange={this.handleChange} />
+    //                         <Label>Occupation</Label>
+    //                         <Input className="form-control" type="select" name="occupation" onChange={this.handleChange}>
+    //                             <option></option>
+    //                             <option>Lawyer</option>
+    //                             <option>Teacher</option>
+    //                             <option>Mechanic</option>
+    //                             <option>Coder</option>
+    //                         </Input>
+    //                         <Label>Car</Label>
+    //                         <Input className="form-control" type="select" name="carType" onChange={this.handleChange}>
+    //                             <option></option>
+    //                             <option>Suburban</option>
+    //                             <option>Grand Caravan</option>
+    //                             <option>Volvo</option>
+    //                             <option>Mazda</option>
+    //                         </Input>
+    //                         <Button id='playerButton' type="submit" color="success">Save</Button>
+    //                     </FormGroup>
+    //                 </Form>
+    //             </div>
+    //         )
+    //     }else{
+    //         return(
+    //             <div className='playerUpdate'>
+    //                 <h3>Player Information</h3>
+    //                 <hr />
+    //                 <Table borderless>
+    //                     <thead>
+    //                         <tr>
+    //                             <th>Name</th>
+    //                             <th>Occupation</th>
+    //                             <th>Car Type</th>
+    //                             <th></th>
+    //                             <th></th>
+    //                         </tr>
+    //                     </thead>
+    //                     <tbody>
+    //                         {
+    //                             this.state.playerInfo.map((playerInfo, id) => {
+    //                                 return (
+    //                                     <tr key={id}>
+    //                                         <td scope="row">{playerInfo.player}</td>
+    //                                         <td>{playerInfo.occupation}</td>
+    //                                         <td>{playerInfo.carType}</td>
+    //                                         <td><Button id={playerInfo.id} size="sm" onClick={e=>this.toggle(e, playerInfo.id)} color="primary">Update</Button></td>
+    //                                         <td><Button id={playerInfo.id} size="sm" onClick={this.playerInfoDelete} color="danger">Delete</Button></td>
+    //                                     </tr>
+    //                                 )
+    //                             })
+    //                         }
+    //                     </tbody>
+    //                 </Table>
+    //                 <Modal isOpen={this.state.modal} className={this.props.className}>
+    //                     <ModalHeader>Update Player Information</ModalHeader>
+    //                     <Form onSubmit={this.handleUpdate}>
+    //                         <ModalBody>
+    //                             <FormGroup>
+    //                             <Label>Player Name</Label>
+    //                         <Input className="form-control" type="text" name="player" placeholder="Your name" onChange={this.handleChange} />
+    //                         <Label>Occupation</Label>
+    //                         <Input className="form-control" type="select" name="occupation" onChange={this.handleChange}>
+    //                             <option></option>
+    //                             <option>Lawyer</option>
+    //                             <option>Teacher</option>
+    //                             <option>Mechanic</option>
+    //                             <option>Coder</option>
+    //                         </Input>
+    //                         <Label>Car</Label>
+    //                         <Input className="form-control" type="select" name="carType" onChange={this.handleChange}>
+    //                             <option></option>
+    //                             <option>Suburban</option>
+    //                             <option>Grand Caravan</option>
+    //                             <option>Volvo</option>
+    //                             <option>Mazda</option>
+    //                         </Input>
+    //                             </FormGroup>
+    //                         </ModalBody>
+    //                         <ModalFooter>
+    //                             <Button color="success" type="submit" onClick={this.closetoggle}>Save</Button>
+    //                             <Button onClick={this.closetoggle}>Cancel</Button>
+    //                         </ModalFooter>
+    //                     </Form>
+    //                 </Modal>
+    //             </div>
+    //         )
+    //     }
+    // }
+    render() {
+        return (
+            <div>
+                {/* {this.view()} */}
                 <div className='player'>
                     <h1>Enter Player Information</h1>
                     <Form id="playerinfo" onSubmit={this.handleSubmit}>
@@ -136,9 +235,6 @@ class PlayerInfo extends React.Component {
                         </FormGroup>
                     </Form>
                 </div>
-            )
-        }else{
-            return(
                 <div className='playerUpdate'>
                     <h3>Player Information</h3>
                     <hr />
@@ -200,100 +296,6 @@ class PlayerInfo extends React.Component {
                         </Form>
                     </Modal>
                 </div>
-            )
-        }
-    }
-    render() {
-        return (
-            <div>
-                {this.view()}
-                {/* <div className='player'>
-                    <h1>Enter Player Information</h1>
-                    <Form id="playerinfo" onSubmit={this.handleSubmit}>
-                        <FormGroup>
-                            <Label>Player Name</Label>
-                            <Input className="form-control" type="text" name="player" placeholder="Your name" onChange={this.handleChange} />
-                            <Label>Occupation</Label>
-                            <Input className="form-control" type="select" name="occupation" onChange={this.handleChange}>
-                                <option></option>
-                                <option>Lawyer</option>
-                                <option>Teacher</option>
-                                <option>Mechanic</option>
-                                <option>Coder</option>
-                            </Input>
-                            <Label>Car</Label>
-                            <Input className="form-control" type="select" name="carType" onChange={this.handleChange}>
-                                <option></option>
-                                <option>Suburban</option>
-                                <option>Grand Caravan</option>
-                                <option>Volvo</option>
-                                <option>Mazda</option>
-                            </Input>
-                            <Button id='playerButton' type="submit" color="success">Save</Button>
-                        </FormGroup>
-                    </Form>
-                </div>
-                <div className='playerUpdate'>
-                    <h3>Player Information</h3>
-                    <hr />
-                    <Table borderless>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Occupation</th>
-                                <th>Car Type</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                this.state.playerInfo.map((playerInfo, id) => {
-                                    return (
-                                        <tr key={id}>
-                                            <td scope="row">{playerInfo.player}</td>
-                                            <td>{playerInfo.occupation}</td>
-                                            <td>{playerInfo.carType}</td>
-                                            <td><Button id={playerInfo.id} size="sm" onClick={e=>this.toggle(e, playerInfo.id)} color="primary">Update</Button></td>
-                                            <td><Button id={playerInfo.id} size="sm" onClick={this.playerInfoDelete} color="danger">Delete</Button></td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
-                    </Table>
-                    <Modal isOpen={this.state.modal} className={this.props.className}>
-                        <ModalHeader>Update Player Information</ModalHeader>
-                        <Form onSubmit={this.handleUpdate}>
-                            <ModalBody>
-                                <FormGroup>
-                                <Label>Player Name</Label>
-                            <Input className="form-control" type="text" name="player" placeholder="Your name" onChange={this.handleChange} />
-                            <Label>Occupation</Label>
-                            <Input className="form-control" type="select" name="occupation" onChange={this.handleChange}>
-                                <option></option>
-                                <option>Lawyer</option>
-                                <option>Teacher</option>
-                                <option>Mechanic</option>
-                                <option>Coder</option>
-                            </Input>
-                            <Label>Car</Label>
-                            <Input className="form-control" type="select" name="carType" onChange={this.handleChange}>
-                                <option></option>
-                                <option>Suburban</option>
-                                <option>Grand Caravan</option>
-                                <option>Volvo</option>
-                                <option>Mazda</option>
-                            </Input>
-                                </FormGroup>
-                            </ModalBody>
-                            <ModalFooter>
-                                <Button color="success" type="submit" onClick={this.closetoggle}>Save</Button>
-                                <Button onClick={this.closetoggle}>Cancel</Button>
-                            </ModalFooter>
-                        </Form>
-                    </Modal>
-                </div> */}
             </div>
 
         )
