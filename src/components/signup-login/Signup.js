@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Row, Col } from 'reactstrap';
+import { Button, Form, FormGroup } from 'reactstrap';
 import '../../App.css'
 
 class Signup extends React.Component {
@@ -10,23 +10,8 @@ class Signup extends React.Component {
       password: '',
       modal: false
     };
-    console.log(this.props)
-    this.toggle = this.toggle.bind(this)
-    this.toggleOther = this.toggleOther.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-  }
-  toggle(){
-    this.setState({
-      modal: !this.state.modal
-    });
-  }
-  toggleOther() {
-    if (this.state.password >= 5) {
-     return (this.setState({
-        modal: !this.state.modal
-      }));
-    }
   }
 
   handleChange(e) {
@@ -58,17 +43,7 @@ class Signup extends React.Component {
   render() {
     return (
       <div>
-        <Row>
-          <Col>
-            <Button className="signupButton" onClick={this.toggle}>Sign Up</Button>
-          </Col>
-          <Col>
-          </Col>
-        </Row>
-        <Modal isOpen={this.state.modal} className={this.props.className}>
-          <ModalHeader>Sign Up</ModalHeader>
           <Form onSubmit={this.handleSubmit}>
-            <ModalBody>
               <FormGroup>
                 <label>Email: </label>
                 <input className="form-control" type="email" name="email" placeholder="example@example.com" required onChange={this.handleChange} />
@@ -76,13 +51,9 @@ class Signup extends React.Component {
                 <label>Password: </label>
                 <input className="form-control" type="password" name="password" minLength="5" required onChange={this.handleChange} />
               </FormGroup>
-            </ModalBody>
-            <ModalFooter>
-              <Button color="secondary" onClick={this.toggle}>Close</Button>{' '}
-              <Button color="success" type="submit" onClick={this.toggleOther}>Sign Up</Button>
-            </ModalFooter>
+              <Button className="button" color="secondary" onClick={this.props.signup}>Cancel</Button>
+              <Button className="button" color="success" type="submit">Sign Up</Button>
           </Form>
-        </Modal>
       </div>
     );
   }

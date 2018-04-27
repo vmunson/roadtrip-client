@@ -154,7 +154,6 @@ export default class Story extends React.Component {
 
 
 const Welcome = (props) => {
-    console.log(props)
     if (props.yes) {
         return (
             <div>

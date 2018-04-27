@@ -86,20 +86,6 @@
   border-radius: 5px;
   padding: 10px
 }
-.signupButton{
-  position: relative;
-  margin:auto;
-  left:55%;
-  background-color: rgb(124, 88, 41);
-}
-.signupButton:hover{
-  background-color:rgb(160, 118, 64)
-}
-.loginButton{
-  position: relative;
-  margin:auto;
-  background-color: rgb(124, 88, 41);
-}
-.loginButton:hover{
-  background-color:rgb(160, 118, 64)
+.button{
+  margin: 1em;
 }
