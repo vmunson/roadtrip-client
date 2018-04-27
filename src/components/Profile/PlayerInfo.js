@@ -107,7 +107,7 @@ class PlayerInfo extends React.Component {
         }).then((res) => this.updatePIArray())
     }
     view = () => {
-        if(this.state.playerInfo === []){
+        if(this.state.playerInfo.length === 0){
             return(
                 <div className='player'>
                     <h1>Enter Player Information</h1>
