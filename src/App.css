@@ -64,11 +64,13 @@
 }
 .playerUpdate{
   position: relative;
-  margin: 40px;
+  width: 90%;
   background-color: rgba(104, 103, 100, .7);
   color:rgb(239, 231, 222);
   border: 1px solid black;
   border-radius: 5px;
+  margin: auto;
+  top: 40px;
 }
 .playerUpdate h1{
   text-align: center;
